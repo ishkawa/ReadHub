@@ -31,9 +31,8 @@
     RHAccount *account = [RHAccount currentAccount];
     if (account) {
         // TODO: confirm sign out
-    } else {
-        [self loadAuthorizePage];
     }
+    [self loadAuthorizePage];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

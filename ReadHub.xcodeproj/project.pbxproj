@@ -41,6 +41,10 @@
 		7FCF8CFD15D7E0500086B5BD /* RHGitHubAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */; };
 		7FCF8D0515D7F3800086B5BD /* RHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D0415D7F3800086B5BD /* RHAccount.m */; };
 		7FCF8D0615D7F3800086B5BD /* RHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D0415D7F3800086B5BD /* RHAccount.m */; };
+		7FCF8D1515D7FD3B0086B5BD /* RHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */; };
+		7FCF8D1615D7FD3B0086B5BD /* RHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */; };
+		7FCF8D1715D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */; };
+		7FCF8D1815D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,9 @@
 		7FCF8D0215D7EEC60086B5BD /* RHConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHConstant.h; sourceTree = "<group>"; };
 		7FCF8D0315D7F3800086B5BD /* RHAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAccount.h; sourceTree = "<group>"; };
 		7FCF8D0415D7F3800086B5BD /* RHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAccount.m; sourceTree = "<group>"; };
+		7FCF8D1215D7FD3A0086B5BD /* RHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHHomeViewController.h; sourceTree = "<group>"; };
+		7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHHomeViewController.m; sourceTree = "<group>"; };
+		7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,15 +162,11 @@
 		7FCF8C6115D7DDD60086B5BD /* ReadHub */ = {
 			isa = PBXGroup;
 			children = (
+				7FCF8D0215D7EEC60086B5BD /* RHConstant.h */,
 				7FCF8C6A15D7DDD60086B5BD /* RHAppDelegate.h */,
 				7FCF8C6B15D7DDD60086B5BD /* RHAppDelegate.m */,
-				7FCF8D0215D7EEC60086B5BD /* RHConstant.h */,
-				7FCF8CF715D7E04F0086B5BD /* RHGitHubAuthViewController.h */,
-				7FCF8CF815D7E0500086B5BD /* RHGitHubAuthViewController.m */,
-				7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */,
-				7FCF8D0315D7F3800086B5BD /* RHAccount.h */,
-				7FCF8D0415D7F3800086B5BD /* RHAccount.m */,
-				7FCF8C6D15D7DDD60086B5BD /* ReadHub.xcdatamodeld */,
+				7FCF8D1115D7FCD40086B5BD /* ViewControllers */,
+				7FCF8D0F15D7FCC60086B5BD /* Models */,
 				7FCF8C6215D7DDD60086B5BD /* Supporting Files */,
 			);
 			path = ReadHub;
@@ -260,6 +263,29 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		7FCF8D0F15D7FCC60086B5BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8C6D15D7DDD60086B5BD /* ReadHub.xcdatamodeld */,
+				7FCF8D0315D7F3800086B5BD /* RHAccount.h */,
+				7FCF8D0415D7F3800086B5BD /* RHAccount.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7FCF8D1115D7FCD40086B5BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8D1215D7FD3A0086B5BD /* RHHomeViewController.h */,
+				7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */,
+				7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */,
+				7FCF8CF715D7E04F0086B5BD /* RHGitHubAuthViewController.h */,
+				7FCF8CF815D7E0500086B5BD /* RHGitHubAuthViewController.m */,
+				7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,6 +361,7 @@
 				7FCF8C6615D7DDD60086B5BD /* InfoPlist.strings in Resources */,
 				7FCF8CE715D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */,
 				7FCF8CFC15D7E0500086B5BD /* RHGitHubAuthViewController.xib in Resources */,
+				7FCF8D1715D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +372,7 @@
 				7FCF8C8215D7DDD60086B5BD /* InfoPlist.strings in Resources */,
 				7FCF8CE815D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */,
 				7FCF8CFD15D7E0500086B5BD /* RHGitHubAuthViewController.xib in Resources */,
+				7FCF8D1815D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +410,7 @@
 				7FCF8CE915D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 				7FCF8CFA15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
 				7FCF8D0515D7F3800086B5BD /* RHAccount.m in Sources */,
+				7FCF8D1515D7FD3B0086B5BD /* RHHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +427,7 @@
 				7FCF8CEA15D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 				7FCF8CFB15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
 				7FCF8D0615D7F3800086B5BD /* RHAccount.m in Sources */,
+				7FCF8D1615D7FD3B0086B5BD /* RHHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +587,7 @@
 				7FCF8C8A15D7DDD60086B5BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FCF8C8B15D7DDD60086B5BD /* Build configuration list for PBXNativeTarget "ReadHubTests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +596,7 @@
 				7FCF8C8D15D7DDD60086B5BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
