@@ -1,4 +1,5 @@
 #import "RHGitHubAuthViewController.h"
+#import "RHAccount.h"
 #import "NSDictionary+URLQuery.h"
 
 @implementation RHGitHubAuthViewController
@@ -26,7 +27,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self loadAuthorizePage];
+    
+    RHAccount *account = [RHAccount currentAccount];
+    if (account) {
+        // TODO: confirm sign out
+    } else {
+        [self loadAuthorizePage];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -90,16 +97,15 @@
             [SVProgressHUD showErrorWithStatus:nil];
             return;
         }
-        [SVProgressHUD showSuccessWithStatus:nil];
         
         NSString *string = [[NSString alloc] initWithData:object encoding:NSUTF8StringEncoding];
-        NSDictionary *params = [NSDictionary dictionaryWithURLQuery:string];
-        NSString *token = [params objectForKey:@"access_token"];
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:token forKey:@"accessToken"];
-        [defaults synchronize];
-        
-        NSLog(@"token: %@", token);
+        NSDictionary *query = [NSDictionary dictionaryWithURLQuery:string];
+        RHAccount *account = [RHAccount accountWithDictionary:query];
+        if (!account) {
+            [SVProgressHUD showErrorWithStatus:nil];
+            return;
+        }
+        [SVProgressHUD showSuccessWithStatus:nil];
         [self dismiss];
     }];
 }

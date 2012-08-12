@@ -39,6 +39,8 @@
 		7FCF8CFB15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8CF815D7E0500086B5BD /* RHGitHubAuthViewController.m */; };
 		7FCF8CFC15D7E0500086B5BD /* RHGitHubAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */; };
 		7FCF8CFD15D7E0500086B5BD /* RHGitHubAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */; };
+		7FCF8D0515D7F3800086B5BD /* RHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D0415D7F3800086B5BD /* RHAccount.m */; };
+		7FCF8D0615D7F3800086B5BD /* RHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D0415D7F3800086B5BD /* RHAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		7FCF8CF815D7E0500086B5BD /* RHGitHubAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHGitHubAuthViewController.m; sourceTree = "<group>"; };
 		7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHGitHubAuthViewController.xib; sourceTree = "<group>"; };
 		7FCF8D0215D7EEC60086B5BD /* RHConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHConstant.h; sourceTree = "<group>"; };
+		7FCF8D0315D7F3800086B5BD /* RHAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAccount.h; sourceTree = "<group>"; };
+		7FCF8D0415D7F3800086B5BD /* RHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAccount.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 				7FCF8CF715D7E04F0086B5BD /* RHGitHubAuthViewController.h */,
 				7FCF8CF815D7E0500086B5BD /* RHGitHubAuthViewController.m */,
 				7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */,
+				7FCF8D0315D7F3800086B5BD /* RHAccount.h */,
+				7FCF8D0415D7F3800086B5BD /* RHAccount.m */,
 				7FCF8C6D15D7DDD60086B5BD /* ReadHub.xcdatamodeld */,
 				7FCF8C6215D7DDD60086B5BD /* Supporting Files */,
 			);
@@ -375,6 +381,7 @@
 				7FCF8CD115D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */,
 				7FCF8CE915D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 				7FCF8CFA15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
+				7FCF8D0515D7F3800086B5BD /* RHAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +397,7 @@
 				7FCF8CD215D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */,
 				7FCF8CEA15D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 				7FCF8CFB15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
+				7FCF8D0615D7F3800086B5BD /* RHAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
