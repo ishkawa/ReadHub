@@ -21,6 +21,20 @@
 		7FCF8C7A15D7DDD60086B5BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF8C5F15D7DDD60086B5BD /* CoreData.framework */; };
 		7FCF8C8215D7DDD60086B5BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8C8015D7DDD60086B5BD /* InfoPlist.strings */; };
 		7FCF8C8515D7DDD60086B5BD /* ReadHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C8415D7DDD60086B5BD /* ReadHubTests.m */; };
+		7FCF8CC115D7DEAD0086B5BD /* ISDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9215D7DEAD0086B5BD /* ISDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7FCF8CC215D7DEAD0086B5BD /* ISDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9215D7DEAD0086B5BD /* ISDataManager.m */; };
+		7FCF8CC715D7DEAD0086B5BD /* ISImageNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9715D7DEAD0086B5BD /* ISImageNetworkOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7FCF8CC815D7DEAD0086B5BD /* ISImageNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9715D7DEAD0086B5BD /* ISImageNetworkOperation.m */; };
+		7FCF8CC915D7DEAD0086B5BD /* ISJSONNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9915D7DEAD0086B5BD /* ISJSONNetworkOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7FCF8CCA15D7DEAD0086B5BD /* ISJSONNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9915D7DEAD0086B5BD /* ISJSONNetworkOperation.m */; };
+		7FCF8CCB15D7DEAD0086B5BD /* ISNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9C15D7DEAD0086B5BD /* ISNetworkOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7FCF8CCC15D7DEAD0086B5BD /* ISNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8C9C15D7DEAD0086B5BD /* ISNetworkOperation.m */; };
+		7FCF8CD115D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8CA115D7DEAD0086B5BD /* NSDictionary+URLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7FCF8CD215D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8CA115D7DEAD0086B5BD /* NSDictionary+URLQuery.m */; };
+		7FCF8CE715D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8CB715D7DEAD0086B5BD /* SVProgressHUD.bundle */; };
+		7FCF8CE815D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8CB715D7DEAD0086B5BD /* SVProgressHUD.bundle */; };
+		7FCF8CE915D7DEAD0086B5BD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8CB915D7DEAD0086B5BD /* SVProgressHUD.m */; };
+		7FCF8CEA15D7DEAD0086B5BD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8CB915D7DEAD0086B5BD /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +66,20 @@
 		7FCF8C8115D7DDD60086B5BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FCF8C8315D7DDD60086B5BD /* ReadHubTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadHubTests.h; sourceTree = "<group>"; };
 		7FCF8C8415D7DDD60086B5BD /* ReadHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadHubTests.m; sourceTree = "<group>"; };
+		7FCF8C9115D7DEAD0086B5BD /* ISDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDataManager.h; sourceTree = "<group>"; };
+		7FCF8C9215D7DEAD0086B5BD /* ISDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISDataManager.m; sourceTree = "<group>"; };
+		7FCF8C9615D7DEAD0086B5BD /* ISImageNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISImageNetworkOperation.h; sourceTree = "<group>"; };
+		7FCF8C9715D7DEAD0086B5BD /* ISImageNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISImageNetworkOperation.m; sourceTree = "<group>"; };
+		7FCF8C9815D7DEAD0086B5BD /* ISJSONNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISJSONNetworkOperation.h; sourceTree = "<group>"; };
+		7FCF8C9915D7DEAD0086B5BD /* ISJSONNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISJSONNetworkOperation.m; sourceTree = "<group>"; };
+		7FCF8C9A15D7DEAD0086B5BD /* ISNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNetwork.h; sourceTree = "<group>"; };
+		7FCF8C9B15D7DEAD0086B5BD /* ISNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISNetworkOperation.h; sourceTree = "<group>"; };
+		7FCF8C9C15D7DEAD0086B5BD /* ISNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISNetworkOperation.m; sourceTree = "<group>"; };
+		7FCF8CA015D7DEAD0086B5BD /* NSDictionary+URLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLQuery.h"; sourceTree = "<group>"; };
+		7FCF8CA115D7DEAD0086B5BD /* NSDictionary+URLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLQuery.m"; sourceTree = "<group>"; };
+		7FCF8CB715D7DEAD0086B5BD /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		7FCF8CB815D7DEAD0086B5BD /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		7FCF8CB915D7DEAD0086B5BD /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +115,7 @@
 				7FCF8C7D15D7DDD60086B5BD /* ReadHubTests */,
 				7FCF8C5815D7DDD60086B5BD /* Frameworks */,
 				7FCF8C5615D7DDD60086B5BD /* Products */,
+				7FCF8C8E15D7DEAD0086B5BD /* Libraries */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +179,67 @@
 				7FCF8C8015D7DDD60086B5BD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FCF8C8E15D7DEAD0086B5BD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8C8F15D7DEAD0086B5BD /* ISDataManager */,
+				7FCF8C9415D7DEAD0086B5BD /* ISNetwork */,
+				7FCF8C9E15D7DEAD0086B5BD /* NSDictionary-URLQuery */,
+				7FCF8CA215D7DEAD0086B5BD /* SVProgressHUD */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		7FCF8C8F15D7DEAD0086B5BD /* ISDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8C9115D7DEAD0086B5BD /* ISDataManager.h */,
+				7FCF8C9215D7DEAD0086B5BD /* ISDataManager.m */,
+			);
+			path = ISDataManager;
+			sourceTree = "<group>";
+		};
+		7FCF8C9415D7DEAD0086B5BD /* ISNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8C9615D7DEAD0086B5BD /* ISImageNetworkOperation.h */,
+				7FCF8C9715D7DEAD0086B5BD /* ISImageNetworkOperation.m */,
+				7FCF8C9815D7DEAD0086B5BD /* ISJSONNetworkOperation.h */,
+				7FCF8C9915D7DEAD0086B5BD /* ISJSONNetworkOperation.m */,
+				7FCF8C9A15D7DEAD0086B5BD /* ISNetwork.h */,
+				7FCF8C9B15D7DEAD0086B5BD /* ISNetworkOperation.h */,
+				7FCF8C9C15D7DEAD0086B5BD /* ISNetworkOperation.m */,
+			);
+			path = ISNetwork;
+			sourceTree = "<group>";
+		};
+		7FCF8C9E15D7DEAD0086B5BD /* NSDictionary-URLQuery */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8CA015D7DEAD0086B5BD /* NSDictionary+URLQuery.h */,
+				7FCF8CA115D7DEAD0086B5BD /* NSDictionary+URLQuery.m */,
+			);
+			path = "NSDictionary-URLQuery";
+			sourceTree = "<group>";
+		};
+		7FCF8CA215D7DEAD0086B5BD /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8CB615D7DEAD0086B5BD /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		7FCF8CB615D7DEAD0086B5BD /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8CB715D7DEAD0086B5BD /* SVProgressHUD.bundle */,
+				7FCF8CB815D7DEAD0086B5BD /* SVProgressHUD.h */,
+				7FCF8CB915D7DEAD0086B5BD /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCF8C6615D7DDD60086B5BD /* InfoPlist.strings in Resources */,
+				7FCF8CE715D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCF8C8215D7DDD60086B5BD /* InfoPlist.strings in Resources */,
+				7FCF8CE815D7DEAD0086B5BD /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +354,12 @@
 				7FCF8C6815D7DDD60086B5BD /* main.m in Sources */,
 				7FCF8C6C15D7DDD60086B5BD /* RHAppDelegate.m in Sources */,
 				7FCF8C6F15D7DDD60086B5BD /* ReadHub.xcdatamodeld in Sources */,
+				7FCF8CC115D7DEAD0086B5BD /* ISDataManager.m in Sources */,
+				7FCF8CC715D7DEAD0086B5BD /* ISImageNetworkOperation.m in Sources */,
+				7FCF8CC915D7DEAD0086B5BD /* ISJSONNetworkOperation.m in Sources */,
+				7FCF8CCB15D7DEAD0086B5BD /* ISNetworkOperation.m in Sources */,
+				7FCF8CD115D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */,
+				7FCF8CE915D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCF8C8515D7DDD60086B5BD /* ReadHubTests.m in Sources */,
+				7FCF8CC215D7DEAD0086B5BD /* ISDataManager.m in Sources */,
+				7FCF8CC815D7DEAD0086B5BD /* ISImageNetworkOperation.m in Sources */,
+				7FCF8CCA15D7DEAD0086B5BD /* ISJSONNetworkOperation.m in Sources */,
+				7FCF8CCC15D7DEAD0086B5BD /* ISNetworkOperation.m in Sources */,
+				7FCF8CD215D7DEAD0086B5BD /* NSDictionary+URLQuery.m in Sources */,
+				7FCF8CEA15D7DEAD0086B5BD /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

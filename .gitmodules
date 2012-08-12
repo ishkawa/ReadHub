@@ -1,0 +1,12 @@
+[submodule "Libraries/ISDataManager"]
+	path = Libraries/ISDataManager
+	url = git@github.com:ishkawa/ISDataManager.git
+[submodule "Libraries/NSDictionary-URLQuery"]
+	path = Libraries/NSDictionary-URLQuery
+	url = git@github.com:ishkawa/NSDictionary-URLQuery.git
+[submodule "Libraries/ISNetwork"]
+	path = Libraries/ISNetwork
+	url = git@github.com:ishkawa/ISNetwork.git
+[submodule "Libraries/SVProgressHUD"]
+	path = Libraries/SVProgressHUD
+	url = https://github.com/samvermette/SVProgressHUD.git
