@@ -45,6 +45,8 @@
 		7FCF8D1615D7FD3B0086B5BD /* RHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */; };
 		7FCF8D1715D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */; };
 		7FCF8D1815D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */; };
+		7FCF8D1B15D801F70086B5BD /* RHGitHubOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1A15D801F70086B5BD /* RHGitHubOperation.m */; };
+		7FCF8D1C15D801F70086B5BD /* RHGitHubOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF8D1A15D801F70086B5BD /* RHGitHubOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		7FCF8D1215D7FD3A0086B5BD /* RHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHHomeViewController.h; sourceTree = "<group>"; };
 		7FCF8D1315D7FD3A0086B5BD /* RHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHHomeViewController.m; sourceTree = "<group>"; };
 		7FCF8D1415D7FD3B0086B5BD /* RHHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHHomeViewController.xib; sourceTree = "<group>"; };
+		7FCF8D1915D801F70086B5BD /* RHGitHubOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHGitHubOperation.h; sourceTree = "<group>"; };
+		7FCF8D1A15D801F70086B5BD /* RHGitHubOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHGitHubOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +169,9 @@
 				7FCF8D0215D7EEC60086B5BD /* RHConstant.h */,
 				7FCF8C6A15D7DDD60086B5BD /* RHAppDelegate.h */,
 				7FCF8C6B15D7DDD60086B5BD /* RHAppDelegate.m */,
-				7FCF8D1115D7FCD40086B5BD /* ViewControllers */,
+				7FFAC2DE15D8044D00AA6B1D /* Operations */,
 				7FCF8D0F15D7FCC60086B5BD /* Models */,
+				7FCF8D1115D7FCD40086B5BD /* ViewControllers */,
 				7FCF8C6215D7DDD60086B5BD /* Supporting Files */,
 			);
 			path = ReadHub;
@@ -284,6 +289,15 @@
 				7FCF8CF915D7E0500086B5BD /* RHGitHubAuthViewController.xib */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7FFAC2DE15D8044D00AA6B1D /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				7FCF8D1915D801F70086B5BD /* RHGitHubOperation.h */,
+				7FCF8D1A15D801F70086B5BD /* RHGitHubOperation.m */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +425,7 @@
 				7FCF8CFA15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
 				7FCF8D0515D7F3800086B5BD /* RHAccount.m in Sources */,
 				7FCF8D1515D7FD3B0086B5BD /* RHHomeViewController.m in Sources */,
+				7FCF8D1B15D801F70086B5BD /* RHGitHubOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +443,7 @@
 				7FCF8CFB15D7E0500086B5BD /* RHGitHubAuthViewController.m in Sources */,
 				7FCF8D0615D7F3800086B5BD /* RHAccount.m in Sources */,
 				7FCF8D1615D7FD3B0086B5BD /* RHHomeViewController.m in Sources */,
+				7FCF8D1C15D801F70086B5BD /* RHGitHubOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
