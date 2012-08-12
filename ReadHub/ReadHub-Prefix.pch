@@ -1,7 +1,3 @@
-//
-// Prefix header for all source files of the 'ReadHub' target in the 'ReadHub' project
-//
-
 #import <Availability.h>
 
 #ifndef __IPHONE_3_0
@@ -14,4 +10,10 @@
     #import <CoreData/CoreData.h>
     #import "ISNetwork.h"
     #import "ISDataManager.h"
+    #import "SVProgressHUD.h"
+    #import "RHConstant.h"
+
+    #define AUTHORIZE_URL    @"https://github.com/login/oauth/authorize"
+    #define ACCESS_TOKEN_URL @"https://github.com/login/oauth/access_token"
+    #define API              @"https://api.github.com"
 #endif
