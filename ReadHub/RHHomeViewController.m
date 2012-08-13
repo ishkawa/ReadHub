@@ -27,12 +27,6 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-}
-
 - (void)presentAccountContextsView
 {
     if (self.acccountContextsPopoverController) {
