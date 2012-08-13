@@ -1,5 +1,6 @@
 #import "RHHomeViewController.h"
 #import "RHAccount.h"
+#import "RHOrganization.h"
 #import "RHGitHubAuthViewController.h"
 #import "RHAccountContextsViewController.h"
 
@@ -17,7 +18,7 @@
                                         action:@selector(presentSettingView)];
         
         RHAccount *account = [RHAccount currentAccount];
-        NSString *title = [NSString stringWithFormat:@"Context: %@", NSStringFromClass([account class])];
+        NSString *title = [NSString stringWithFormat:@"Context: %@", account.organization ? account.organization.login : account.user.login];
         self.navigationItem.rightBarButtonItem =
         [[UIBarButtonItem alloc] initWithTitle:title
                                          style:UIBarButtonItemStyleBordered
@@ -27,9 +28,17 @@
     return self;
 }
 
+- (void)updateAccountContext
+{
+    RHAccount *account = [RHAccount currentAccount];
+    NSString *title = [NSString stringWithFormat:@"Context: %@", account.organization ? account.organization.login : account.user.login];
+    self.navigationItem.rightBarButtonItem.title = title;
+}
+
 - (void)presentAccountContextsView
 {
     if (self.acccountContextsPopoverController) {
+        [self updateAccountContext];
         [self.acccountContextsPopoverController dismissPopoverAnimated:YES];
         self.acccountContextsPopoverController = nil;
         return;
@@ -61,10 +70,7 @@
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     self.acccountContextsPopoverController = nil;
-    
-    RHAccount *account = [RHAccount currentAccount];
-    NSString *title = [NSString stringWithFormat:@"Context: %@", NSStringFromClass([account class])];
-    self.navigationItem.rightBarButtonItem.title = title;
+    [self updateAccountContext];
 }
 
 @end

@@ -91,12 +91,11 @@
     request.HTTPBody = [parameters.URLQuery dataUsingEncoding:NSUTF8StringEncoding];
     
     ISNetworkOperation *operation = [ISNetworkOperation operationWithRequest:request];
-    [operation enqueueWithHandler:^(NSURLResponse *response, id object, NSError *error) {
+    [operation enqueueWithHandler:^(NSHTTPURLResponse *response, id object, NSError *error) {
         if (error) {
             [SVProgressHUD showErrorWithStatus:nil];
             return;
         }
-        
         NSString *string = [[NSString alloc] initWithData:object encoding:NSUTF8StringEncoding];
         NSDictionary *query = [NSDictionary dictionaryWithURLQuery:string];
         RHAccount *account = [RHAccount accountWithDictionary:query];
@@ -104,6 +103,7 @@
             [SVProgressHUD showErrorWithStatus:nil];
             return;
         }
+        [RHAccount setCurrentAccount:account];
         [SVProgressHUD showSuccessWithStatus:nil];
         [self dismiss];
     }];

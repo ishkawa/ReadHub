@@ -15,7 +15,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self)
                                               inManagedObjectContext:context];
     
-    return [[RHOrganization alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    return [[self alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
 }
 
 + (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary
@@ -41,5 +41,14 @@
     }
     return [result objectAtIndex:0];
 }
+
++ (NSArray *)allOrganizations
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(self)];
+    
+    return [context executeFetchRequest:request error:nil];
+}
+
 
 @end

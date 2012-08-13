@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F56687515D948FF00673495 /* RHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56687415D948FF00673495 /* RHUser.m */; };
+		7F56687615D948FF00673495 /* RHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56687415D948FF00673495 /* RHUser.m */; };
 		7FCF8C5A15D7DDD60086B5BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF8C5915D7DDD60086B5BD /* UIKit.framework */; };
 		7FCF8C5C15D7DDD60086B5BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF8C5B15D7DDD60086B5BD /* Foundation.framework */; };
 		7FCF8C5E15D7DDD60086B5BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF8C5D15D7DDD60086B5BD /* CoreGraphics.framework */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F56687315D948FF00673495 /* RHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHUser.h; sourceTree = "<group>"; };
+		7F56687415D948FF00673495 /* RHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHUser.m; sourceTree = "<group>"; };
 		7FCF8C5515D7DDD60086B5BD /* ReadHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCF8C5915D7DDD60086B5BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FCF8C5B15D7DDD60086B5BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -283,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				7FCF8C6D15D7DDD60086B5BD /* ReadHub.xcdatamodeld */,
+				7F56687315D948FF00673495 /* RHUser.h */,
+				7F56687415D948FF00673495 /* RHUser.m */,
 				7FFAC2FA15D8EEC000AA6B1D /* RHAccount.h */,
 				7FFAC2FB15D8EEC000AA6B1D /* RHAccount.m */,
 				7FFAC2F615D8EE6B00AA6B1D /* RHOrganization.h */,
@@ -470,6 +476,7 @@
 				7FFAC2EA15D8066D00AA6B1D /* RHAccountContextsViewController.m in Sources */,
 				7FFAC2F815D8EE6B00AA6B1D /* RHOrganization.m in Sources */,
 				7FFAC2FC15D8EEC000AA6B1D /* RHAccount.m in Sources */,
+				7F56687515D948FF00673495 /* RHUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +497,7 @@
 				7FFAC2EB15D8066D00AA6B1D /* RHAccountContextsViewController.m in Sources */,
 				7FFAC2F915D8EE6B00AA6B1D /* RHOrganization.m in Sources */,
 				7FFAC2FD15D8EEC000AA6B1D /* RHAccount.m in Sources */,
+				7F56687615D948FF00673495 /* RHUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

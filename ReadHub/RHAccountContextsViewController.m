@@ -34,8 +34,9 @@
         return;
     }
     NSArray *contexts = [NSArray arrayWithObject:account];
-    if ([account.organizations count]) {
-        contexts = [contexts arrayByAddingObjectsFromArray:[account.organizations allObjects]];
+    NSArray *organizations = [RHOrganization allOrganizations];
+    if ([organizations count]) {
+        contexts = [contexts arrayByAddingObjectsFromArray:organizations];
     }
     self.accountContexts = contexts;
 }
@@ -44,12 +45,11 @@
 {
     [RHGitHubOperation callAPI:@"/user/orgs"
                         method:ISHTTPMethodGET
-                       handler:^(NSURLResponse *response, id object, NSError *error) {
+                       handler:^(NSHTTPURLResponse *response, id object, NSError *error) {
                            if (error || ![object isKindOfClass:[NSArray class]]) {
                                return;
                            }
                            NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
-                           RHAccount *account = [RHAccount currentAccount];
                            NSArray *receivedIDs = [object valueForKey:@"id"];
                            
                            // add
@@ -57,15 +57,13 @@
                                if (![RHOrganization organizationForID:[dictionary objectForKey:@"id"]]) {
                                    RHOrganization *organization = [RHOrganization organizationWithDictionary:dictionary];
                                    [context insertObject:organization];
-                                   [account addOrganizationsObject:organization];
                                }
                            }
                            
                            // remove
-                           for (RHOrganization *organization in [account.organizations allObjects]) {
+                           for (RHOrganization *organization in [RHOrganization allOrganizations]) {
                                if (![receivedIDs containsObject:organization.identifier]) {
                                    [context deleteObject:organization];
-                                   [account removeOrganizationsObject:organization];
                                }
                            }
                            
@@ -90,8 +88,22 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    RHAccount *account = [RHAccount currentAccount];
+    RHOrganization *organization = nil;
+    
     id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
-    cell.textLabel.text = [accountContext description];
+    if ([accountContext isKindOfClass:[RHAccount class]]) {
+        cell.textLabel.text = account.user.login;
+    } else {
+        organization = (RHOrganization *)accountContext;
+        cell.textLabel.text = organization.login;
+    }
+    
+    if (organization == account.organization) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -101,6 +113,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+
+    RHAccount *account = [RHAccount currentAccount];
+    id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
+    if ([accountContext isKindOfClass:[RHAccount class]]) {
+        account.organization = nil;
+    } else {
+        account.organization = (RHOrganization *)accountContext;
+    }
+    [self.tableView reloadData];
 }
 
 @end

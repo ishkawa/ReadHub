@@ -14,5 +14,6 @@
 + (RHOrganization *)organization;
 + (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary;
 + (RHOrganization *)organizationForID:(NSNumber *)identifier;
++ (NSArray *)allOrganizations;
 
 @end
