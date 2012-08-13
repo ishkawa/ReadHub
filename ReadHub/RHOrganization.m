@@ -15,7 +15,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self)
                                               inManagedObjectContext:context];
     
-    return [[RHOrganization alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    return [[self alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
 }
 
 + (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary

@@ -7,23 +7,26 @@
 @dynamic tokenType;
 @dynamic organizations;
 
++ (RHAccount *)account
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self)
+                                              inManagedObjectContext:context];
+    
+    return [[self alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+}
+
 + (RHAccount *)accountWithDictionary:(NSDictionary *)dictionary
 {
     if (![dictionary objectForKey:@"access_token"]) {
         return nil;
     }
-    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
-    RHAccount *currentAccount = [self currentAccount];
-    if (currentAccount) {
-        // app manages only 1 account
-        [context deleteObject:currentAccount];
-    }
-    
-    RHAccount *account = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self)
-                                                       inManagedObjectContext:context];
+    RHAccount *account = [RHAccount account];
     account.accessToken = [dictionary objectForKey:@"access_token"];
     account.tokenType   = [dictionary objectForKey:@"token_type"];
-    [[ISDataManager sharedManager] saveContext];
+    
+    return account;
+    
     
     return account;
 }
@@ -37,6 +40,18 @@
         return nil;
     }
     return [results objectAtIndex:0];
+}
+
++ (void)setCurrentAccount:(RHAccount *)account
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    RHAccount *currentAccount = [RHAccount currentAccount];
+    if (currentAccount) {
+        // app manages only 1 account
+        [context deleteObject:currentAccount];
+    }
+    [context insertObject:account];
+    [[ISDataManager sharedManager] saveContext];
 }
 
 @end

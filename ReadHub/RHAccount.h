@@ -9,8 +9,10 @@
 @property (nonatomic, retain) NSString *tokenType;
 @property (nonatomic, retain) NSSet *organizations;
 
++ (RHAccount *)account;
 + (RHAccount *)accountWithDictionary:(NSDictionary *)dictionary;
 + (RHAccount *)currentAccount;
++ (void)setCurrentAccount:(RHAccount *)account;
 
 @end
 
