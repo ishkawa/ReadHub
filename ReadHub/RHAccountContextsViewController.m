@@ -48,14 +48,15 @@
                            if (error || ![object isKindOfClass:[NSArray class]]) {
                                return;
                            }
+                           NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
                            RHAccount *account = [RHAccount currentAccount];
                            NSArray *receivedIDs = [object valueForKey:@"id"];
-                           NSArray *existingIDs = [[account.organizations allObjects] valueForKey:@"identifier"];
                            
                            // add
                            for (NSDictionary *dictionary in object) {
-                               if (![existingIDs containsObject:[dictionary objectForKey:@"id"]]) {
+                               if (![RHOrganization organizationForID:[dictionary objectForKey:@"id"]]) {
                                    RHOrganization *organization = [RHOrganization organizationWithDictionary:dictionary];
+                                   [context insertObject:organization];
                                    [account addOrganizationsObject:organization];
                                }
                            }
@@ -63,6 +64,7 @@
                            // remove
                            for (RHOrganization *organization in [account.organizations allObjects]) {
                                if (![receivedIDs containsObject:organization.identifier]) {
+                                   [context deleteObject:organization];
                                    [account removeOrganizationsObject:organization];
                                }
                            }

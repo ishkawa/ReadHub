@@ -9,17 +9,37 @@
 @dynamic login;
 @dynamic account;
 
-+ (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary
++ (RHOrganization *)organization
 {
     NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
-    RHOrganization *organization = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self)
-                                                                 inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self)
+                                              inManagedObjectContext:context];
+    
+    return [[RHOrganization alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+}
+
++ (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary
+{
+    RHOrganization *organization = [self organization];
     organization.identifier = [dictionary objectForKey:@"id"];
     organization.login      = [dictionary objectForKey:@"login"];
     organization.avatarURL  = [NSURL URLWithString:[dictionary objectForKey:@"avatar_url"]];
     organization.url        = [NSURL URLWithString:[dictionary objectForKey:@"url"]];
     
     return organization;
+}
+
++ (RHOrganization *)organizationForID:(NSNumber *)identifier
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(self)];
+    request.predicate = [NSPredicate predicateWithFormat:@"identifier=%@", identifier];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    if (![result count]) {
+        return nil;
+    }
+    return [result objectAtIndex:0];
 }
 
 @end

@@ -5,8 +5,8 @@
 
 @interface RHAccount : NSManagedObject
 
-@property (nonatomic, retain) NSString * accessToken;
-@property (nonatomic, retain) NSString * tokenType;
+@property (nonatomic, retain) NSString *accessToken;
+@property (nonatomic, retain) NSString *tokenType;
 @property (nonatomic, retain) NSSet *organizations;
 
 + (RHAccount *)accountWithDictionary:(NSDictionary *)dictionary;
