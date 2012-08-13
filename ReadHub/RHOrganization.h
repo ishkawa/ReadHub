@@ -11,4 +11,6 @@
 @property (nonatomic, retain) NSString  *login;
 @property (nonatomic, retain) RHAccount *account;
 
++ (RHOrganization *)organizationWithDictionary:(NSDictionary *)dictionary;
+
 @end
