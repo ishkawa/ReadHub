@@ -4,6 +4,7 @@
         <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenType" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RHOrganization" inverseName="account" inverseEntity="RHOrganization" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RHUser" inverseName="account" inverseEntity="RHUser" syncable="YES"/>
     </entity>
     <entity name="RHOrganization" representedClassName="RHOrganization" syncable="YES">
         <attribute name="avatarURL" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -23,10 +24,11 @@
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="publicRepositoriesCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="account" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RHAccount" inverseName="user" inverseEntity="RHAccount" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RHAccount" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="RHOrganization" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="RHUser" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="RHAccount" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="RHOrganization" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="RHUser" positionX="160" positionY="192" width="128" height="210"/>
     </elements>
 </model>

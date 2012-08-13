@@ -14,4 +14,7 @@
 @property (nonatomic, retain) NSNumber *followersCount;
 @property (nonatomic, retain) NSNumber *followingCount;
 
++ (RHUser *)user;
++ (RHUser *)userWithDictionary:(NSDictionary *)dictionary;
+
 @end

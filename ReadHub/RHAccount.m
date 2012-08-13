@@ -6,6 +6,7 @@
 @dynamic accessToken;
 @dynamic tokenType;
 @dynamic organizations;
+@dynamic user;
 
 + (RHAccount *)account
 {
@@ -52,6 +53,8 @@
     }
     [context insertObject:account];
     [[ISDataManager sharedManager] saveContext];
+    
+    [account loadUserInfo];
 }
 
 - (void)loadUserInfo
@@ -62,7 +65,12 @@
                            if (error || response.statusCode !=200) {
                                return;
                            }
+                           NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+                           RHUser *user = [RHUser userWithDictionary:object];
+                           [context insertObject:user];
+                           self.user = user;
                            
+                           [[ISDataManager sharedManager] saveContext];
                        }];
 }
 

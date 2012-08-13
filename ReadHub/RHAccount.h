@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "RHUser.h"
 
 @class RHOrganization;
 
@@ -7,7 +8,8 @@
 
 @property (nonatomic, retain) NSString *accessToken;
 @property (nonatomic, retain) NSString *tokenType;
-@property (nonatomic, retain) NSSet *organizations;
+@property (nonatomic, retain) NSSet    *organizations;
+@property (nonatomic, retain) RHUser   *user;
 
 + (RHAccount *)account;
 + (RHAccount *)accountWithDictionary:(NSDictionary *)dictionary;

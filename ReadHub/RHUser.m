@@ -28,16 +28,20 @@
         return nil;
     }
     RHUser *user = [RHUser user];
-    user.login          = [dictionary objectForKey:@"login"];
-    user.identifier     = [dictionary objectForKey:@"id"];
-    user.avatarURL      = [NSURL URLWithString:[dictionary objectForKey:@"avatar_url"]];
-    user.name           = [dictionary objectForKey:@"name"];
-    user.bio            = [dictionary objectForKey:@"bio"];
-    user.blogURL        = [NSURL URLWithString:[dictionary objectForKey:@"blog"]];
-    user.location       = [dictionary objectForKey:@"location"];
-    user.followersCount = [dictionary objectForKey:@"followers"];
-    user.followersCount = [dictionary objectForKey:@"following"];
-    user.publicRepositoriesCount = [dictionary objectForKey:@"public_repos"];
+    @try {
+        user.login          = [dictionary objectForKey:@"login"];
+        user.identifier     = [dictionary objectForKey:@"id"];
+        user.avatarURL      = [NSURL URLWithString:[dictionary objectForKey:@"avatar_url"]];
+        user.name           = [dictionary objectForKey:@"name"];
+        user.bio            = [dictionary objectForKey:@"bio"];
+        user.blogURL        = [NSURL URLWithString:[dictionary objectForKey:@"blog"]];
+        user.location       = [dictionary objectForKey:@"location"];
+        user.followersCount = [dictionary objectForKey:@"followers"];
+        user.followersCount = [dictionary objectForKey:@"following"];
+        user.publicRepositoriesCount = [dictionary objectForKey:@"public_repos"];
+    }
+    @catch (NSException *exception) {
+    }
     
     return user;
 }

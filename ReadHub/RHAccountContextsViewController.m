@@ -91,7 +91,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
-    cell.textLabel.text = [accountContext description];
+    if ([accountContext isKindOfClass:[RHAccount class]]) {
+        RHAccount *account = (RHAccount *)accountContext;
+        cell.textLabel.text = account.user.login;
+    } else {
+        RHOrganization *organization = (RHOrganization *)accountContext;
+        cell.textLabel.text = organization.login;
+    }
     
     return cell;
 }
