@@ -2,4 +2,6 @@
 
 @interface RHHomeViewController : UIViewController
 
+@property (strong, nonatomic) UIPopoverController *acccountContextsPopoverController;
+
 @end
