@@ -1,10 +1,11 @@
 #import "RHAccount.h"
-
+#import "RHOrganization.h"
 
 @implementation RHAccount
 
-@dynamic tokenType;
 @dynamic accessToken;
+@dynamic tokenType;
+@dynamic organizations;
 
 + (RHAccount *)accountWithDictionary:(NSDictionary *)dictionary
 {

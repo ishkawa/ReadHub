@@ -12,6 +12,7 @@
     #import "ISDataManager.h"
     #import "SVProgressHUD.h"
     #import "RHConstant.h"
+    #import "RHGitHubOperation.h"
 
     #define AUTHORIZE_URL    @"https://github.com/login/oauth/authorize"
     #define ACCESS_TOKEN_URL @"https://github.com/login/oauth/access_token"
