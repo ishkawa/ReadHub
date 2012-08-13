@@ -17,7 +17,7 @@
                                         action:@selector(presentSettingView)];
         
         RHAccount *account = [RHAccount currentAccount];
-        NSString *title = [NSString stringWithFormat:@"Context: %@", account];
+        NSString *title = [NSString stringWithFormat:@"Context: %@", NSStringFromClass([account class])];
         self.navigationItem.rightBarButtonItem =
         [[UIBarButtonItem alloc] initWithTitle:title
                                          style:UIBarButtonItemStyleBordered
@@ -25,6 +25,12 @@
                                         action:@selector(presentAccountContextsView)];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)presentAccountContextsView
@@ -36,6 +42,7 @@
     }
     RHAccountContextsViewController *viewController = [[RHAccountContextsViewController alloc] init];
     self.acccountContextsPopoverController = [[UIPopoverController alloc] initWithContentViewController:viewController];
+    self.acccountContextsPopoverController.delegate = self;
     [self.acccountContextsPopoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem
                                                    permittedArrowDirections:UIPopoverArrowDirectionUp
                                                                    animated:YES];
@@ -53,6 +60,17 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
+}
+
+#pragma mark - popover controller delegate
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.acccountContextsPopoverController = nil;
+    
+    RHAccount *account = [RHAccount currentAccount];
+    NSString *title = [NSString stringWithFormat:@"Context: %@", NSStringFromClass([account class])];
+    self.navigationItem.rightBarButtonItem.title = title;
 }
 
 @end

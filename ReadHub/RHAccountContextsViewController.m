@@ -37,6 +37,7 @@
     if ([account.organizations count]) {
         contexts = [contexts arrayByAddingObjectsFromArray:[account.organizations allObjects]];
     }
+    self.accountContexts = contexts;
 }
 
 - (void)refresh
@@ -48,20 +49,20 @@
                                return;
                            }
                            RHAccount *account = [RHAccount currentAccount];
-                           NSMutableArray *array = [NSMutableArray array];
+                           NSArray *receivedIDs = [object valueForKey:@"id"];
+                           NSArray *existingIDs = [[account.organizations allObjects] valueForKey:@"identifier"];
                            
                            // add
                            for (NSDictionary *dictionary in object) {
-                               RHOrganization *organization = [RHOrganization organizationWithDictionary:dictionary];
-                               [array addObject:organization];
-                               if (![account.organizations containsObject:organization]) {
+                               if (![existingIDs containsObject:[dictionary objectForKey:@"id"]]) {
+                                   RHOrganization *organization = [RHOrganization organizationWithDictionary:dictionary];
                                    [account addOrganizationsObject:organization];
                                }
                            }
                            
                            // remove
                            for (RHOrganization *organization in [account.organizations allObjects]) {
-                               if (![array containsObject:organization]) {
+                               if (![receivedIDs containsObject:organization.identifier]) {
                                    [account removeOrganizationsObject:organization];
                                }
                            }
