@@ -54,4 +54,16 @@
     [[ISDataManager sharedManager] saveContext];
 }
 
+- (void)loadUserInfo
+{
+    [RHGitHubOperation callAPI:@"/user"
+                        method:ISHTTPMethodGET
+                       handler:^(NSHTTPURLResponse *response, id object, NSError *error) {
+                           if (error || response.statusCode !=200) {
+                               return;
+                           }
+                           
+                       }];
+}
+
 @end

@@ -44,7 +44,7 @@
 {
     [RHGitHubOperation callAPI:@"/user/orgs"
                         method:ISHTTPMethodGET
-                       handler:^(NSURLResponse *response, id object, NSError *error) {
+                       handler:^(NSHTTPURLResponse *response, id object, NSError *error) {
                            if (error || ![object isKindOfClass:[NSArray class]]) {
                                return;
                            }

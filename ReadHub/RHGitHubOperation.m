@@ -6,7 +6,7 @@
 
 + (void)callAPI:(NSString *)path
          method:(ISHTTPMethod)method
-        handler:(void (^)(NSURLResponse *, id, NSError *))handler
+        handler:(void (^)(NSHTTPURLResponse *, id, NSError *))handler
 {
     [self callAPI:path
            method:method
@@ -17,7 +17,7 @@
 + (void)callAPI:(NSString *)path
          method:(ISHTTPMethod)method
          params:(NSDictionary *)params
-        handler:(void (^)(NSURLResponse *, id, NSError *))handler
+        handler:(void (^)(NSHTTPURLResponse *, id, NSError *))handler
 {
     NSLog(@"\npath: %@\nparams: %@", path, params);
     

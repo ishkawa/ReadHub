@@ -91,7 +91,7 @@
     request.HTTPBody = [parameters.URLQuery dataUsingEncoding:NSUTF8StringEncoding];
     
     ISNetworkOperation *operation = [ISNetworkOperation operationWithRequest:request];
-    [operation enqueueWithHandler:^(NSURLResponse *response, id object, NSError *error) {
+    [operation enqueueWithHandler:^(NSHTTPURLResponse *response, id object, NSError *error) {
         if (error) {
             [SVProgressHUD showErrorWithStatus:nil];
             return;
