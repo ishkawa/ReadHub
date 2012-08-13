@@ -42,4 +42,13 @@
     return [result objectAtIndex:0];
 }
 
++ (NSArray *)allOrganizations
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(self)];
+    
+    return [context executeFetchRequest:request error:nil];
+}
+
+
 @end

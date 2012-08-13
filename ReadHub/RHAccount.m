@@ -5,7 +5,7 @@
 
 @dynamic accessToken;
 @dynamic tokenType;
-@dynamic organizations;
+@dynamic organization;
 @dynamic user;
 
 + (RHAccount *)account
@@ -25,9 +25,6 @@
     RHAccount *account = [RHAccount account];
     account.accessToken = [dictionary objectForKey:@"access_token"];
     account.tokenType   = [dictionary objectForKey:@"token_type"];
-    
-    return account;
-    
     
     return account;
 }
