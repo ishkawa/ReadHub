@@ -1,13 +1,15 @@
 #import "RHOrganization.h"
 #import "RHAccount.h"
+#import "RHRepository.h"
 
 @implementation RHOrganization
 
-@dynamic identifier;
 @dynamic avatarURL;
-@dynamic url;
+@dynamic identifier;
 @dynamic login;
+@dynamic url;
 @dynamic account;
+@dynamic repositories;
 
 + (RHOrganization *)organization
 {
@@ -49,6 +51,5 @@
     
     return [context executeFetchRequest:request error:nil];
 }
-
 
 @end
