@@ -1,9 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "RHAccountContext.h"
 
 @class RHAccount;
 
-@interface RHOrganization : NSManagedObject
+@interface RHOrganization : NSManagedObject <RHAccountContext>
 
 @property (nonatomic, retain) NSNumber  *identifier;
 @property (nonatomic, retain) NSURL     *avatarURL;

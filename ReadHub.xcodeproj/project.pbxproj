@@ -74,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F02000515DA852000E8F76D /* RHAccountContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAccountContext.h; sourceTree = "<group>"; };
 		7F02FFF015D9D70E00E8F76D /* RHRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRepositoriesViewController.h; sourceTree = "<group>"; };
 		7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRepositoriesViewController.m; sourceTree = "<group>"; };
 		7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHRepositoriesViewController.xib; sourceTree = "<group>"; };
@@ -308,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				7FCF8C6D15D7DDD60086B5BD /* ReadHub.xcdatamodeld */,
+				7F02000515DA852000E8F76D /* RHAccountContext.h */,
 				7F56687315D948FF00673495 /* RHUser.h */,
 				7F56687415D948FF00673495 /* RHUser.m */,
 				7FFAC2FA15D8EEC000AA6B1D /* RHAccount.h */,

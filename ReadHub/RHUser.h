@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "RHAccountContext.h"
 
-@interface RHUser : NSManagedObject
+@interface RHUser : NSManagedObject <RHAccountContext>
 
 @property (nonatomic, retain) NSString *login;
 @property (nonatomic, retain) NSNumber *identifier;
