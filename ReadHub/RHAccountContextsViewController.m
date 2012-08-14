@@ -1,5 +1,6 @@
 #import "RHAccountContextsViewController.h"
 #import "RHAccount.h"
+#import "RHAccountContext.h"
 #import "RHOrganization.h"
 
 // displays {personal|organization} account
@@ -33,10 +34,13 @@
     if (!account) {
         return;
     }
-    NSArray *contexts = [NSArray arrayWithObject:account];
+    NSMutableArray *contexts = [NSMutableArray array];
+    if (account.user) {
+        [contexts addObject:account.user];
+    }
     NSArray *organizations = [RHOrganization allOrganizations];
     if ([organizations count]) {
-        contexts = [contexts arrayByAddingObjectsFromArray:organizations];
+        [contexts addObjectsFromArray:organizations];
     }
     self.accountContexts = contexts;
 }
@@ -89,16 +93,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     RHAccount *account = [RHAccount currentAccount];
-    RHOrganization *organization = nil;
     
-    id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
-    if ([accountContext isKindOfClass:[RHAccount class]]) {
-        cell.textLabel.text = account.user.login;
-    } else {
-        organization = (RHOrganization *)accountContext;
-        cell.textLabel.text = organization.login;
-    }
+    id <RHAccountContext> accountContext = [self.accountContexts objectAtIndex:indexPath.row];
+    cell.textLabel.text = accountContext.login;
     
+    BOOL isOrganization = [accountContext isKindOfClass:[RHOrganization class]];
+    RHOrganization *organization = isOrganization ? (RHOrganization *)accountContext : nil;
     if (organization == account.organization) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
@@ -114,14 +114,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-
     RHAccount *account = [RHAccount currentAccount];
     id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
-    if ([accountContext isKindOfClass:[RHAccount class]]) {
+    if ([accountContext isKindOfClass:[RHUser class]]) {
         account.organization = nil;
     } else {
         account.organization = (RHOrganization *)accountContext;
     }
+    [[ISDataManager sharedManager] saveContext];
     [self.tableView reloadData];
 }
 

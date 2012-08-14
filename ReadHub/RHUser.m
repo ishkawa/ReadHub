@@ -1,17 +1,21 @@
 #import "RHUser.h"
+#import "RHAccount.h"
+#import "RHRepository.h"
 
 @implementation RHUser
 
-@dynamic login;
-@dynamic identifier;
 @dynamic avatarURL;
-@dynamic name;
 @dynamic bio;
 @dynamic blogURL;
-@dynamic location;
-@dynamic publicRepositoriesCount;
 @dynamic followersCount;
 @dynamic followingCount;
+@dynamic identifier;
+@dynamic location;
+@dynamic login;
+@dynamic name;
+@dynamic publicRepositoriesCount;
+@dynamic account;
+@dynamic repositories;
 
 + (RHUser *)user
 {

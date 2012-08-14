@@ -3,6 +3,7 @@
 #import "RHOrganization.h"
 #import "RHGitHubAuthViewController.h"
 #import "RHAccountContextsViewController.h"
+#import "RHRepositoriesViewController.h"
 
 @implementation RHHomeViewController
 
@@ -24,6 +25,10 @@
                                          style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(presentAccountContextsView)];
+        
+        UIViewController *viewController = [[UIViewController alloc] init];
+        self.repositoriesViewController = [[RHRepositoriesViewController alloc] init];
+        self.viewControllers = @[ viewController, self.repositoriesViewController ];
     }
     return self;
 }
@@ -33,6 +38,7 @@
     RHAccount *account = [RHAccount currentAccount];
     NSString *title = [NSString stringWithFormat:@"Context: %@", account.organization ? account.organization.login : account.user.login];
     self.navigationItem.rightBarButtonItem.title = title;
+    [self.repositoriesViewController refresh];
 }
 
 - (void)presentAccountContextsView

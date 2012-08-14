@@ -1,7 +1,6 @@
 #import "RHAppDelegate.h"
 #import "RHHomeViewController.h"
 
-
 @implementation RHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
