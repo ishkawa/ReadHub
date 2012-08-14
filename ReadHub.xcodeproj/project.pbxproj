@@ -12,6 +12,10 @@
 		7F02000D15DA9A7800E8F76D /* RHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02000B15DA9A7800E8F76D /* RHUser.m */; };
 		7F02001015DA9AF900E8F76D /* RHOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02000F15DA9AF900E8F76D /* RHOrganization.m */; };
 		7F02001115DA9AF900E8F76D /* RHOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02000F15DA9AF900E8F76D /* RHOrganization.m */; };
+		7F02002515DAA99500E8F76D /* RHFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02002315DAA99500E8F76D /* RHFeedViewController.m */; };
+		7F02002615DAA99500E8F76D /* RHFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02002315DAA99500E8F76D /* RHFeedViewController.m */; };
+		7F02002715DAA99500E8F76D /* RHFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F02002415DAA99500E8F76D /* RHFeedViewController.xib */; };
+		7F02002815DAA99500E8F76D /* RHFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F02002415DAA99500E8F76D /* RHFeedViewController.xib */; };
 		7F02FFF315D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */; };
 		7F02FFF415D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */; };
 		7F02FFF515D9D70E00E8F76D /* RHRepositoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */; };
@@ -79,6 +83,9 @@
 		7F02000B15DA9A7800E8F76D /* RHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHUser.m; sourceTree = "<group>"; };
 		7F02000E15DA9AF900E8F76D /* RHOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHOrganization.h; sourceTree = "<group>"; };
 		7F02000F15DA9AF900E8F76D /* RHOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHOrganization.m; sourceTree = "<group>"; };
+		7F02002215DAA99500E8F76D /* RHFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHFeedViewController.h; sourceTree = "<group>"; };
+		7F02002315DAA99500E8F76D /* RHFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHFeedViewController.m; sourceTree = "<group>"; };
+		7F02002415DAA99500E8F76D /* RHFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHFeedViewController.xib; sourceTree = "<group>"; };
 		7F02FFF015D9D70E00E8F76D /* RHRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRepositoriesViewController.h; sourceTree = "<group>"; };
 		7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRepositoriesViewController.m; sourceTree = "<group>"; };
 		7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHRepositoriesViewController.xib; sourceTree = "<group>"; };
@@ -158,6 +165,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F02002A15DAA9A200E8F76D /* RHFeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F02002215DAA99500E8F76D /* RHFeedViewController.h */,
+				7F02002315DAA99500E8F76D /* RHFeedViewController.m */,
+				7F02002415DAA99500E8F76D /* RHFeedViewController.xib */,
+			);
+			name = RHFeedViewController;
+			sourceTree = "<group>";
+		};
 		7F02FFF815D9D73300E8F76D /* RHRepositoriesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +346,7 @@
 				7FFAC2FE15D8EF5B00AA6B1D /* RHHomeViewController */,
 				7FFAC2FF15D8EF6800AA6B1D /* RHAccountContextsViewController */,
 				7FFAC30015D8EF8000AA6B1D /* RHGitHubAuthViewController */,
+				7F02002A15DAA9A200E8F76D /* RHFeedViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -450,6 +468,7 @@
 				7FCF8D1715D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */,
 				7FFAC2EC15D8066D00AA6B1D /* RHAccountContextsViewController.xib in Resources */,
 				7F02FFF515D9D70E00E8F76D /* RHRepositoriesViewController.xib in Resources */,
+				7F02002715DAA99500E8F76D /* RHFeedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +482,7 @@
 				7FCF8D1815D7FD3B0086B5BD /* RHHomeViewController.xib in Resources */,
 				7FFAC2ED15D8066D00AA6B1D /* RHAccountContextsViewController.xib in Resources */,
 				7F02FFF615D9D70E00E8F76D /* RHRepositoriesViewController.xib in Resources */,
+				7F02002815DAA99500E8F76D /* RHFeedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +527,7 @@
 				7F02FFFF15D9DFE800E8F76D /* RHRepository.m in Sources */,
 				7F02000C15DA9A7800E8F76D /* RHUser.m in Sources */,
 				7F02001015DA9AF900E8F76D /* RHOrganization.m in Sources */,
+				7F02002515DAA99500E8F76D /* RHFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +551,7 @@
 				7F02000015D9DFE800E8F76D /* RHRepository.m in Sources */,
 				7F02000D15DA9A7800E8F76D /* RHUser.m in Sources */,
 				7F02001115DA9AF900E8F76D /* RHOrganization.m in Sources */,
+				7F02002615DAA99500E8F76D /* RHFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

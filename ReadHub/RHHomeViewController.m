@@ -3,6 +3,7 @@
 #import "RHOrganization.h"
 #import "RHGitHubAuthViewController.h"
 #import "RHAccountContextsViewController.h"
+#import "RHFeedViewController.h"
 #import "RHRepositoriesViewController.h"
 
 @implementation RHHomeViewController
@@ -26,9 +27,9 @@
                                         target:self
                                         action:@selector(presentAccountContextsView)];
         
-        UIViewController *viewController = [[UIViewController alloc] init];
+        self.feedViewController = [[RHFeedViewController alloc] init];
         self.repositoriesViewController = [[RHRepositoriesViewController alloc] init];
-        self.viewControllers = @[ viewController, self.repositoriesViewController ];
+        self.viewControllers = @[ self.feedViewController, self.repositoriesViewController ];
     }
     return self;
 }
