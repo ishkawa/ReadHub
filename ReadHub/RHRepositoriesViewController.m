@@ -8,13 +8,7 @@
 {
     self = [super init];
     if (self) {
-        self.repositories = [RHRepository allRepositories];
-        RHAccount *account = [RHAccount currentAccount];
-        if (account.organization) {
-            self.accountContext = account.organization;
-        } else {
-            self.accountContext = account.user;
-        }
+        [self updateAccountContext];
     }
     return self;
 }
@@ -36,8 +30,22 @@
     return YES;
 }
 
+- (void)updateAccountContext
+{
+    RHAccount *account = [RHAccount currentAccount];
+    if (account.organization) {
+        self.accountContext = account.organization;
+    } else {
+        self.accountContext = account.user;
+    }
+    self.repositories = [self.accountContext.repositories allObjects];
+    [self.tableView reloadData];
+}
+
 - (void)refresh
 {
+    [self updateAccountContext];
+    
     NSString *apiPath = @"/user/repos";
     if ([self.accountContext isKindOfClass:[RHOrganization class]]) {
         apiPath = [NSString stringWithFormat:@"/orgs/%@/repos", self.accountContext.login];
@@ -50,23 +58,20 @@
                            }
                            NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
                            
-                           // add
-                           NSMutableArray *array = [NSMutableArray arrayWithArray:self.repositories];
                            for (NSDictionary *dictionary in object) {
                                if (![RHRepository repositoryForID:[dictionary objectForKey:@"id"]]) {
                                    RHRepository *repository = [RHRepository repositoryWithDictionary:dictionary];
                                    if (repository) {
-                                       [array addObject:repository];
                                        [context insertObject:repository];
+                                       [self.accountContext addRepositoriesObject:repository];
                                    }
                                }
                            }
-                           self.repositories = [NSArray arrayWithArray:array];
+                           [self updateAccountContext];
                            // TODO: remove
                            
                            // save and reload
                            [[ISDataManager sharedManager] saveContext];
-                           [self.tableView reloadData];
                        }];
 }
 

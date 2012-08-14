@@ -9,4 +9,6 @@
 @property (strong, nonatomic) NSArray *repositories;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (void)refresh;
+
 @end
