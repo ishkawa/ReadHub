@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F02000015D9DFE800E8F76D /* RHRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFFE15D9DFE800E8F76D /* RHRepository.m */; };
 		7F02FFF315D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */; };
 		7F02FFF415D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */; };
 		7F02FFF515D9D70E00E8F76D /* RHRepositoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */; };
 		7F02FFF615D9D70E00E8F76D /* RHRepositoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */; };
+		7F02FFFF15D9DFE800E8F76D /* RHRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F02FFFE15D9DFE800E8F76D /* RHRepository.m */; };
 		7F56687515D948FF00673495 /* RHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56687415D948FF00673495 /* RHUser.m */; };
 		7F56687615D948FF00673495 /* RHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F56687415D948FF00673495 /* RHUser.m */; };
 		7FCF8C5A15D7DDD60086B5BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCF8C5915D7DDD60086B5BD /* UIKit.framework */; };
@@ -75,6 +77,8 @@
 		7F02FFF015D9D70E00E8F76D /* RHRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRepositoriesViewController.h; sourceTree = "<group>"; };
 		7F02FFF115D9D70E00E8F76D /* RHRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRepositoriesViewController.m; sourceTree = "<group>"; };
 		7F02FFF215D9D70E00E8F76D /* RHRepositoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RHRepositoriesViewController.xib; sourceTree = "<group>"; };
+		7F02FFFD15D9DFE800E8F76D /* RHRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRepository.h; sourceTree = "<group>"; };
+		7F02FFFE15D9DFE800E8F76D /* RHRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRepository.m; sourceTree = "<group>"; };
 		7F56687315D948FF00673495 /* RHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHUser.h; sourceTree = "<group>"; };
 		7F56687415D948FF00673495 /* RHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHUser.m; sourceTree = "<group>"; };
 		7FCF8C5515D7DDD60086B5BD /* ReadHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +314,8 @@
 				7FFAC2FB15D8EEC000AA6B1D /* RHAccount.m */,
 				7FFAC2F615D8EE6B00AA6B1D /* RHOrganization.h */,
 				7FFAC2F715D8EE6B00AA6B1D /* RHOrganization.m */,
+				7F02FFFD15D9DFE800E8F76D /* RHRepository.h */,
+				7F02FFFE15D9DFE800E8F76D /* RHRepository.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				7FFAC2FC15D8EEC000AA6B1D /* RHAccount.m in Sources */,
 				7F56687515D948FF00673495 /* RHUser.m in Sources */,
 				7F02FFF315D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */,
+				7F02FFFF15D9DFE800E8F76D /* RHRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +527,7 @@
 				7FFAC2FD15D8EEC000AA6B1D /* RHAccount.m in Sources */,
 				7F56687615D948FF00673495 /* RHUser.m in Sources */,
 				7F02FFF415D9D70E00E8F76D /* RHRepositoriesViewController.m in Sources */,
+				7F02000015D9DFE800E8F76D /* RHRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
