@@ -3,6 +3,7 @@
 #import "RHOrganization.h"
 #import "RHGitHubAuthViewController.h"
 #import "RHAccountContextsViewController.h"
+#import "RHRepositoriesViewController.h"
 
 @implementation RHHomeViewController
 
@@ -24,6 +25,10 @@
                                          style:UIBarButtonItemStyleBordered
                                         target:self
                                         action:@selector(presentAccountContextsView)];
+        
+        UIViewController *viewController = [[UIViewController alloc] init];
+        RHRepositoriesViewController *reposViewController = [[RHRepositoriesViewController alloc] init];
+        self.viewControllers = @[ viewController, reposViewController ];
     }
     return self;
 }

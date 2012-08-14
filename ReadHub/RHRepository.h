@@ -19,9 +19,10 @@
 @property (nonatomic, retain) NSString *masterBranchName;
 @property (nonatomic, retain) NSNumber *openIssuesCount;
 @property (nonatomic, retain) NSString *descriptor;
-@property (nonatomic, retain) RHOrganization *organization;
 
 + (RHRepository *)repository;
 + (RHRepository *)repositoryWithDictionary:(NSDictionary *)dictionary;
++ (RHRepository *)repositoryForID:(NSNumber *)identifier;
++ (NSArray *)allRepositories;
 
 @end

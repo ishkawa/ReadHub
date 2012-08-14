@@ -17,7 +17,6 @@
 @dynamic masterBranchName;
 @dynamic openIssuesCount;
 @dynamic descriptor;
-@dynamic organization;
 
 + (RHRepository *)repository
 {
@@ -30,6 +29,14 @@
 
 + (RHRepository *)repositoryWithDictionary:(NSDictionary *)dictionary
 {
+    NSMutableDictionary *temp = [dictionary mutableCopy];
+    for (id key in [temp allKeys]) {
+        if ([[temp objectForKey:key] isKindOfClass:[NSNull class]]) {
+            [temp setValue:nil forKey:key];
+        }
+    }
+    dictionary = [NSDictionary dictionaryWithDictionary:temp];
+    
     if (![dictionary objectForKey:@"id"]) {
         return nil;
     }
@@ -49,10 +56,32 @@
         repository.masterBranchName = [dictionary objectForKey:@"master_branch"];
         repository.openIssuesCount  = [dictionary objectForKey:@"open_issues"];
         repository.descriptor   = [dictionary objectForKey:@"description"];
-        repository.organization = nil;
     }
     @catch (NSException *exception) {
+        NSLog(@"exc: %@", exception);
     }
+    return repository;
+}
+
++ (RHRepository *)repositoryForID:(NSNumber *)identifier
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(self)];
+    request.predicate = [NSPredicate predicateWithFormat:@"identifier=%@", identifier];
+    
+    NSArray *result = [context executeFetchRequest:request error:nil];
+    if (![result count]) {
+        return nil;
+    }
+    return [result objectAtIndex:0];
+}
+
++ (NSArray *)allRepositories
+{
+    NSManagedObjectContext *context = [ISDataManager sharedManager].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass(self)];
+    
+    return [context executeFetchRequest:request error:nil];
 }
 
 @end

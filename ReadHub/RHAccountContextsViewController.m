@@ -122,6 +122,7 @@
     } else {
         account.organization = (RHOrganization *)accountContext;
     }
+    [[ISDataManager sharedManager] saveContext];
     [self.tableView reloadData];
 }
 
