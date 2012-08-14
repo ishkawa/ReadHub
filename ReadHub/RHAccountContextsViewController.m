@@ -114,10 +114,9 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-
     RHAccount *account = [RHAccount currentAccount];
     id accountContext = [self.accountContexts objectAtIndex:indexPath.row];
-    if ([accountContext isKindOfClass:[RHAccount class]]) {
+    if ([accountContext isKindOfClass:[RHUser class]]) {
         account.organization = nil;
     } else {
         account.organization = (RHOrganization *)accountContext;

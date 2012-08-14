@@ -9,6 +9,12 @@
     self = [super init];
     if (self) {
         self.repositories = [RHRepository allRepositories];
+        RHAccount *account = [RHAccount currentAccount];
+        if (account.organization) {
+            self.accountContext = account.organization;
+        } else {
+            self.accountContext = account.user;
+        }
     }
     return self;
 }
@@ -32,11 +38,10 @@
 
 - (void)refresh
 {
-    RHAccount *account = [RHAccount currentAccount];
-    NSString *apiPath = account.organization ?
-        [NSString stringWithFormat:@"/orgs/%@/repos", account.organization.login] :
-        @"/user/repos";
-    
+    NSString *apiPath = @"/user/repos";
+    if ([self.accountContext isKindOfClass:[RHOrganization class]]) {
+        apiPath = [NSString stringWithFormat:@"/orgs/%@/repos", self.accountContext.login];
+    }
     [RHGitHubOperation callAPI:apiPath
                         method:ISHTTPMethodGET
                        handler:^(NSHTTPURLResponse *response, id object, NSError *error) {
